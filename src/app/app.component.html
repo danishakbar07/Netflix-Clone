@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="header">
+
+    <div class="header_banner" [ngStyle]="{'background-image' : 'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)),url('+headerBGUrl+')'}">
+      <h2>{{trending?.results[3].title}}</h2>
+      <div class="header-button" >
+        <button class="play-button rounded">
+          <mat-icon id="my2">arrow_right</mat-icon>
+          <span id="my1">Play</span>
+        </button>
+        
+        <button class="more-button">
+          <mat-icon>info</mat-icon>
+          <span>More Info</span>
+        </button>
+
+      </div>
+    </div>
+
+    <div class="header__main" id="stickyHeader" [class.sticky]="sticky" #stickHeader>
+      <div class="header__left">
+        <a routerLink="/">
+          <img src="assets/images/netflix.svg" alt="logo">
+        </a>
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="#">TV Showss</a></li>
+            <li class="active"><a href="#">Movies</a></li>
+            <li class="active"><a href="#">Latest</a></li>
+            <li class="active"><a href="#">My List</a></li>
+        </ul>
+      </div>
+      <div class="header__right">
+      <ul>
+        <li><a href=""><mat-icon>search</mat-icon></a></li>
+        <li><a href="">Childern</a></li>
+        <li><a href=""><mat-icon>card_giftcard</mat-icon></a></li>
+        <li><a href=""><mat-icon>notifications</mat-icon></a></li>
+        <li>
+        
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+  <div class="body" style="margin-top:38rem">
+    <app-slider title="TRENDING" [movies]="trending" [sliderConfig]="sliderConfig"> </app-slider>
+    <app-slider title="TOP RATED" [movies]="topRated" [sliderConfig]="sliderConfig"> </app-slider>
+    <app-slider title="NOW PLAYING" [movies]="nowPlaying" [sliderConfig]="sliderConfig"> </app-slider>
+    <app-slider title="ORIGINALS" [movies]="orginals" [sliderConfig]="sliderConfig"> </app-slider>
+    <app-slider title="POPULAR" [movies]="popular" [sliderConfig]="sliderConfig"> </app-slider>
+    <app-slider title="LATEST" [movies]="latest"[sliderConfig]="sliderConfig" ></app-slider>
+  </div>
+</div>
